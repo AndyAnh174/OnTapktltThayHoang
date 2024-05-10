@@ -1,0 +1,1 @@
+{"name":"Local: test(diff)","url":"/home/andyanh/code/test(diff).cpp","tests":[{"id":1715356655563,"input":"4\n1.33\n3 9\n4 6\n10 12\n5 7","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/andyanh/code/test(diff).cpp","group":"local","local":true}

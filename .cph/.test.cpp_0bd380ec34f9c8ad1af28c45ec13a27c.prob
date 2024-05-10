@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/home/andyanh/Downloads/code/test.cpp","tests":[{"id":1715341122217,"input":"30 9 2013","output":"HOP LE\n3\n30\n1 10 2013\n29 9 2013"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/andyanh/Downloads/code/test.cpp","group":"local","local":true}
