@@ -12,7 +12,10 @@ long long luythua(long long B, long long P, long long M) {
     return R;
 }
 
-int main() {
+signed main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     long long B, P, M;
     while (cin >> B >> P >> M) {
         long long res = luythua(B, P, M);
