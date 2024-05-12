@@ -8,11 +8,9 @@ struct CuocHop {
     int batDau; 
     int ketThuc; 
 };
-
 bool soSanhCuocHop(CuocHop ch1, CuocHop ch2) {
     return ch1.ketThuc < ch2.ketThuc;
 }
-
 signed main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
@@ -24,13 +22,10 @@ signed main() {
         cuocHop[i].id = i + 1;
         cin >> cuocHop[i].batDau >> cuocHop[i].ketThuc;
     }
-
     sort(cuocHop, cuocHop + N, soSanhCuocHop);
-
     int thoiGianKetThucCuoiCung = cuocHop[0].ketThuc;
     int lichTrinh[10000] = {cuocHop[0].id};
     int kichThuocLichTrinh = 1;
-
     for (int i = 1; i < N; ++i) {
         if (cuocHop[i].batDau >= thoiGianKetThucCuoiCung) {
             lichTrinh[kichThuocLichTrinh++] = cuocHop[i].id;

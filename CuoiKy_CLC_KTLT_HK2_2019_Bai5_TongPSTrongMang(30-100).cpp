@@ -1,6 +1,6 @@
 #include <iostream>
 #define space ' '
-#define endl '\n'
+#define end '\n'
 using namespace std;
 struct PhanSo {
     int tu;
