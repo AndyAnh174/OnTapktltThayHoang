@@ -1,12 +1,11 @@
 #include <iostream>
-#include <boost/multiprecision/cpp_int.hpp>
 
+#define space ' '
 using namespace std;
-using namespace boost::multiprecision;
 
 struct PhanSo {
-    cpp_int tu;
-    cpp_int mau;
+    int tu;
+    int mau;
 };
 
 PhanSo cong(PhanSo a, PhanSo b) {
@@ -16,9 +15,9 @@ PhanSo cong(PhanSo a, PhanSo b) {
     return c;
 }
 
-cpp_int gcd(cpp_int a, cpp_int b) {
+int timUCLN(int a, int b) {
     while (b != 0) {
-        cpp_int temp = b;
+        int temp = b;
         b = a % b;
         a = temp;
     }
@@ -26,16 +25,7 @@ cpp_int gcd(cpp_int a, cpp_int b) {
 }
 
 PhanSo rutGon(PhanSo ps) {
-    if (ps.tu == 0) { 
-        return ps;
-    }
-
-    if (ps.mau < 0) { 
-        ps.tu = -ps.tu;
-        ps.mau = -ps.mau;
-    }
-
-    cpp_int ucln = gcd(abs(ps.tu), abs(ps.mau)); 
+    int ucln = timUCLN(ps.tu, ps.mau);
     ps.tu /= ucln;
     ps.mau /= ucln;
     return ps;
@@ -58,7 +48,7 @@ int main() {
     }
     PhanSo tong = tongPhanSo(arr, n);
     tong = rutGon(tong);
-    cout << tong.tu << " " << tong.mau << endl;
+    cout << tong.tu << space << tong.mau << endl;
     delete[] arr;
 
     return 0;
