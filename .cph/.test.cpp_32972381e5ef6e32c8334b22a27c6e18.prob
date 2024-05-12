@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/home/andyanh/OnTapktltThayHoang/test.cpp","tests":[{"id":1715476024627,"input":"3\n150 500 150\n1 200 100\n400 800 80","output":"2 180\n2 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/andyanh/OnTapktltThayHoang/test.cpp","group":"local","local":true}
