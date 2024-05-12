@@ -1,11 +1,12 @@
 #include <iostream>
+#include <boost/multiprecision/cpp_int.hpp>
 
-#define space ' '
 using namespace std;
+using namespace boost::multiprecision;
 
 struct PhanSo {
-    int tu;
-    int mau;
+    cpp_int tu;
+    cpp_int mau;
 };
 
 PhanSo cong(PhanSo a, PhanSo b) {
@@ -15,9 +16,9 @@ PhanSo cong(PhanSo a, PhanSo b) {
     return c;
 }
 
-int timUCLN(int a, int b) {
+cpp_int gcd(cpp_int a, cpp_int b) {
     while (b != 0) {
-        int temp = b;
+        cpp_int temp = b;
         b = a % b;
         a = temp;
     }
@@ -25,7 +26,16 @@ int timUCLN(int a, int b) {
 }
 
 PhanSo rutGon(PhanSo ps) {
-    int ucln = timUCLN(ps.tu, ps.mau);
+    if (ps.tu == 0) { 
+        return ps;
+    }
+
+    if (ps.mau < 0) { 
+        ps.tu = -ps.tu;
+        ps.mau = -ps.mau;
+    }
+
+    cpp_int ucln = gcd(abs(ps.tu), abs(ps.mau)); 
     ps.tu /= ucln;
     ps.mau /= ucln;
     return ps;
@@ -39,10 +49,7 @@ PhanSo tongPhanSo(PhanSo* arr, int n) {
     return sum;
 }
 
-signed main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
+int main() {
     int n;
     cin >> n;
     PhanSo* arr = new PhanSo[n];
@@ -51,7 +58,7 @@ signed main() {
     }
     PhanSo tong = tongPhanSo(arr, n);
     tong = rutGon(tong);
-    cout << tong.tu << space << tong.mau << endl;
+    cout << tong.tu << " " << tong.mau << endl;
     delete[] arr;
 
     return 0;
