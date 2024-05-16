@@ -101,6 +101,21 @@ signed main()
       cin.tie(0);
       cout.tie(0);
       string a,b;
-      cout<<ADD(a,b);
+      string c;
+      int i=0;
+      cin >> a;
+      while(i<a.size()){
+      if(a[i] == '+' || a[i] == '-' || a[i] == '*') {
+            c=a[i];
+            i++;
+            break;
+      } i++;
+}     
+      b=a.substr(i,a.size()-i);
+      a=a.substr(0,i-1);
+      if(c =="+") cout << ADD(a,b) << endl;
+      else if (c =="-") cout << SUB(a,b) << endl;
+      else if (c =="*") cout << MULSTR(a,b)<< endl;
+      else return 0;
 
 }
