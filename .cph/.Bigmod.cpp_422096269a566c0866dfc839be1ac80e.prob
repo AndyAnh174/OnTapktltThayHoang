@@ -1,0 +1,1 @@
+{"name":"Local: Bigmod","url":"/home/andyanh/OnTapktltThayHoang/Bigmod.cpp","tests":[{"id":1715576106628,"input":"3\n18132\n17","output":"13"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/andyanh/OnTapktltThayHoang/Bigmod.cpp","group":"local","local":true}
